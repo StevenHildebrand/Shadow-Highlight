@@ -1,28 +1,24 @@
+/*For Chrome and Safari browsers*/
+::selection {
+    color: #213f5c;
+    background: none repeat scroll 100% 0% transparent;
+    text-shadow: 0px 0px 6px #0a550a;
+    }
+
+/*For Mozilla browsers*/
 ::-moz-selection { 
     color: #213f5c;
     background: none repeat scroll 100% 0% transparent;
-    text-shadow: 0px 0px 6px #1D5F48;
+    text-shadow: 0px 0px 6px #0a550a;
     } 
 
-::selection {
-    color: #213f5c;
-    background: none repeat scroll 0% 0% transparent;
-    text-shadow: 0px 0px 8px #559e54;
-    }
-
+/*For Chrome browsers - text-shadow is disabled for text input selections */
 input[type=text]::selection { 
     color: #559e54;
     background: none repeat scroll 0% 0% #213f5c;
     }
 
-/*testing for edge cases
-
-a::selection { background: none repeat scroll 0% 0% transparent;text-shadow: 0px 0px 2px #213f5c;} 
-
-p::selection { color: #213f5c;
-    background: none repeat scroll 0% 0% transparent;
-    text-shadow: 0px 0px 8px #559e54;} 
-*/
+/*For webkit browsers*/
 ::-ms-selection { 
     color: #213f5c;
     background: none repeat scroll 0% 0% transparent;
@@ -33,4 +29,4 @@ p::selection { color: #213f5c;
     color: #213f5c;
     background: none repeat scroll 0% 0% transparent;
     text-shadow: 0px 0px 8px #559e54;
-    } 
+    }
