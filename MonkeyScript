@@ -1,18 +1,17 @@
 // ==UserScript==
 // @name        Shadow Highlight
-// @namespace   StormBringer
+// @namespace   Steven Hildebrand
 // @description An elegant highlight from a more civilized time.  Building on work by Anveshak @ https://github.com/niwinnm/ShadowSelection
 // @include     *
 // @version     1.0
-// @copyright	 2018, StormBringer
-// @supportURL  https://github.com/niwinnm/ShadowSelection/issues
-// @homepageURL https://github.com/niwinnm/ShadowSelection
+// @copyright	 2018, CC BY-SA Steven Hildebrand
+// @supportURL  https://github.com/StevenHildebrand/Shadow-Highlight
+// @homepageURL https://github.com/StevenHildebrand/Shadow-Highlight
 // @icon    
-// @oujs:author StormBringer
+// @oujs:author Steven Hildebrand
 // @grant       none
 // ==/UserScript==
  var style=document.createElement("style");
-
 
 // Under :selection, the first color property is the colour of the text, remove if no changes are desired
 // The background: property should be left alone, the settings for that don't usually need alteration
@@ -20,15 +19,17 @@
 // text-shadow: <x offest>px <y offset>px <blur radius>px <color-hex-code>.
 // In everything except Firefox, input text boxes do not take the text-shadow property, and it will break the highlighting for text areas if this is set
 
-
 //Firefox (Cyberfox, Iceweasel)
-    style.innerHTML = "::-moz-selection { color: #213f5c; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 6px #559e54;} a::selection { color: #213f5c; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 6px #559e54;}";
+style.innerHTML = " ::-moz-selection { color: #213f5c; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 6px #0a550a; } ";
+
 //Chrome and derviatives (Opera, Vivaldi, etc)
-    style.innerHTML +=" ::selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;}  input[type=text]::selection {color: #559e54; background: none repeat scroll 0% 0% #213f5c;}";
-//For WebKit Browser
-    style.innerHTML +=" ::-webkit-selection { background: none repeat scroll 0% 0% transparent;text-shadow: 0px 0px 2px #213f5c;} a::selection {  background: none repeat scroll 0% 0% transparent;text-shadow: 0px 0px 2px #213f5c;}";
-//For Other Browsers
-    style.innerHTML +=" ::-ms-selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;}";
-    style.innerHTML +=" ::-o-selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;}";
+style.innerHTML +=" ::selection { color: #213f5c; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 6px #0a550a; } ";
+
+style.innerHTML +=" input[type=text]::selection { color: #559e54; background: none repeat scroll 0% 0% #213f5c; } ";
+
+//Webkit browsers
+style.innerHTML +=" ::-ms-selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;} ";
+
+style.innerHTML +=" ::-o-selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;} "; 
 
 document.body.appendChild(style);
