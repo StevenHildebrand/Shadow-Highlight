@@ -7,7 +7,7 @@
 // @copyright	 2018, CC BY-SA Steven Hildebrand
 // @supportURL  https://github.com/StevenHildebrand/Shadow-Highlight
 // @homepageURL https://github.com/StevenHildebrand/Shadow-Highlight
-// @icon    
+// @icon
 // @oujs:author Steven Hildebrand
 // @grant       none
 // ==/UserScript==
@@ -20,16 +20,16 @@
 // In everything except Firefox, input text boxes do not take the text-shadow property, and it will break the highlighting for text areas if this is set
 
 //Firefox (Cyberfox, Iceweasel)
-style.innerHTML = " ::-moz-selection { color: #213f5c; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 6px #0a550a; } ";
+style.innerHTML = " ::-moz-selection { color: #22405e; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 2px #005500, 0px 0px 10px #1D5F48; } ";
 
 //Chrome and derviatives (Opera, Vivaldi, etc)
-style.innerHTML +=" ::selection { color: #213f5c; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 6px #0a550a; } ";
+style.innerHTML += " ::selection { color: #22405e; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 2px #005500, 0px 0px 10px #1D5F48; } ";
 
-style.innerHTML +=" input[type=text]::selection { color: #559e54; background: none repeat scroll 0% 0% #213f5c; } ";
+style.innerHTML += " input[type=text]::selection { color: #22405e; background: none repeat scroll 0% 0% rgba(12, 69, 49, .5); } ";
 
 //Webkit browsers
-style.innerHTML +=" ::-ms-selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;} ";
+style.innerHTML += " ::-ms-selection { color: #22405e; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 2px #005500, 0px 0px 10px #1D5F48;} ";
 
-style.innerHTML +=" ::-o-selection { color: #213f5c; background: none repeat scroll 0% 0% transparent; text-shadow: 0px 0px 8px #559e54;} "; 
+style.innerHTML += " ::-o-selection { color: #22405e; background: none repeat scroll 100% 0% transparent; text-shadow: 0px 0px 2px #005500, 0px 0px 10px #1D5F48;} ";
 
 document.body.appendChild(style);
